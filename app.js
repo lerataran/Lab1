@@ -28,3 +28,15 @@ tg.MainButton.show();
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
 tg.sendData(item);
 });
+web_app=WebAppInfo(url="https://zxcomegalul.github.io/LabInterface")
+keyboard = ReplyKeyboardMarkup(
+ keyboard=[
+ [KeyboardButton(text="Знаки зодиака", 
+web_app=web_app)]
+ ],
+ resize_keyboard=True
+)
+@dp.message_handler(content_types='web_app_data')
+async def buy_process(web_app_message):
+ await bot.send_message(web_app_message.chat.id,
+DISC[f'{web_app_message.web_app_data}'])
